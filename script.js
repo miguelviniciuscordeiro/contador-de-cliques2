@@ -4,7 +4,7 @@ const contador = document.getElementById("contador");
 const mensagem = document.getElementById("mensagem");
 const adicionar = document.getElementById("adicionar");
 const resetar = document.getElementById("resetar");
-
+const diminuir = document.getElementById("diminuir");
 function atualizarTela() {
   contador.textContent = cliques;
 
@@ -20,9 +20,17 @@ function atualizarTela() {
 adicionar.addEventListener("click", () => {
   cliques++;
   atualizarTela();
+
 });
 
 resetar.addEventListener("click", () => {
   cliques = 0;
   atualizarTela();
 });
+diminuir.addEventListener("click", () => {
+  if (cliques > 0) {
+    cliques--;
+    atualizarTela();
+  }
+});
+
